@@ -1,0 +1,102 @@
+/* การออกแบบพื้นฐานแบบ Pixel Art */
+body {
+    font-family: monospace; /* ใช้ฟอนต์ที่ดูเป็นตัวอักษรคอมพิวเตอร์เก่าๆ */
+    background-color: #fce4ec; /* สีชมพูอ่อนๆ น่ารัก */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-shadow: 2px 2px 0 #ff69b4; /* ให้ดูมีมิติแบบเกมส์เก่า */
+    color: white;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+/* ---------------------------------
+   1. ส่วนตารางลูกปัด (Bead Canvas)
+   --------------------------------- */
+.bead-canvas {
+    display: grid;
+    /* สร้างตาราง 20x20 ช่อง หรือตามที่คุณต้องการ */
+    grid-template-columns: repeat(20, 20px); 
+    grid-template-rows: repeat(20, 20px);
+    border: 4px solid #ff69b4;
+    box-shadow: 6px 6px 0px #ff69b4; 
+    background-color: white; 
+    margin-top: 15px;
+}
+
+.bead {
+    width: 20px;
+    height: 20px;
+    background-color: white; 
+    border: 1px solid #eee; /* เส้นแบ่งช่องบางๆ */
+    box-sizing: border-box; /* สำคัญเพื่อให้ขนาดคงที่ */
+    /* ถ้าอยากให้ดูโค้งมนนิดหน่อย */
+    /* border-radius: 20%; */ 
+    cursor: crosshair;
+    transition: background-color 0.05s; /* ทำให้ดูตอบสนองเร็วขึ้น */
+}
+
+
+/* ---------------------------------
+   2. ส่วนเครื่องมือ (Toolbar)
+   --------------------------------- */
+.toolbar {
+    background-color: #fff1f8;
+    border: 3px solid #ff99cc;
+    padding: 15px;
+    height: fit-content;
+    box-shadow: 4px 4px 0px #ff99cc;
+}
+
+.color-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #333;
+    cursor: pointer;
+}
+
+.color-swatch.active {
+    border: 5px solid #ff007f; /* สีที่ถูกเลือกจะมีขอบหนาขึ้น */
+    transform: scale(1.1);
+}
+
+.color-swatch.eraser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* ปุ่มสไตล์ Pixel */
+.pixel-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: 3px solid #388E3C;
+    box-shadow: 2px 2px 0px #388E3C;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.pixel-button:active {
+    box-shadow: none; /* กดแล้วดูจมลงไป */
+    transform: translate(2px, 2px);
+}
