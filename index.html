@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Bead Maker - ร้อยลูกปัดสุดน่ารัก</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>💎 เว็บเกมส์ร้อยลูกปัด 💖</h1>
+    </header>
+
+    <div class="container">
+        <div class="toolbar">
+            <div class="color-picker">
+                <div class="color-swatch active" data-color="#FF0000" style="background-color: #FF0000;"></div>
+                <div class="color-swatch" data-color="#FFFF00" style="background-color: #FFFF00;"></div>
+                <div class="color-swatch" data-color="#00FF00" style="background-color: #00FF00;"></div>
+                <div class="color-swatch" data-color="#0000FF" style="background-color: #0000FF;"></div>
+                <div class="color-swatch eraser" data-color="#FFFFFF" style="background-color: #FFFFFF;" title="ยางลบ">E</div> 
+            </div>
+            <button id="saveButton" class="pixel-button">บันทึกภาพ 💾</button>
+        </div>
+
+        <div id="beadCanvas" class="bead-canvas">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
